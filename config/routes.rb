@@ -1,6 +1,12 @@
 Actions::Application.routes.draw do
+  resources :marks
+
+
   resources :tasks
   root to: 'tasks#index'
+
+  get 'demo-page' => 'highlight_demo#demo-page'
+  get 'demo-page-with-iframe' => 'highlight_demo#demo-page-with-iframe'
 
 
   # The priority is based upon order of creation:

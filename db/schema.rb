@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130918160610) do
+ActiveRecord::Schema.define(:version => 20130922110607) do
+
+  create_table "highlight_saves", :force => true do |t|
+    t.text     "record"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "marks", :force => true do |t|
+    t.text     "highlight"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "tasks", :force => true do |t|
     t.string   "name"

@@ -1,13 +1,49 @@
-<h1>Check List</h1>
+<div id="sandbox">
 
-<%= link_to "New Task", new_task_path, id: "new_link" %>
+  <h1>Task List</h1>
 
-<h2>Incomplete Tasks</h2>
-<div class="tasks" id="incomplete_tasks">
-  <%= render @incomplete_tasks %>
+  <%= link_to "New Task", new_task_path, id: "new_link", remote: true %>
+
+  <h2>Incomplete Tasks</h2>
+  <div class="tasks" id="incomplete_tasks">
+    <%= render @incomplete_tasks %>
+  </div>
+
+  <h2>Comlpete Tasks</h2>
+  <div class="tasks" id="complete_tasks">
+    <%= render @complete_tasks %>
+  </div>
+
+  <p id="genesis">
+    In the beginnining, the earth was empty and void.</br>
+    
+  </p>
+
 </div>
 
-<h2>Comlpete Tasks</h2>
-<div class="tasks" id="complete_tasks">
-  <%= render @complete_tasks %>
+<div class="info-box">
+  <ul>
+    <li>Select any text in the grey box below to highlight it.</li>
+    <li>
+      Change highlight color:
+      <div id="color-picker">
+        <div class="color" style="background-color: #FFFF66"></div>
+        <div class="color" style="background-color: #66FF66"></div>
+        <div class="color" style="background-color: #6666FF"></div>
+      </div>
+    </li>
+  </ul>
 </div>
+
+<div>
+  <button id="serialize-btn">Serialize highlights</button>
+  <button id="deserialize-btn">Deserialize highlights</button>
+  <textarea rows="6" cols="90" style="width: 100%"><%= Mark.first.highlight.to_s %></textarea>
+</div>
+
+<%= render 'highlight_form' %>
+
+<div id="test_hide">
+<p>Hello! Let me know if you can see me!</p>
+</div>
+
