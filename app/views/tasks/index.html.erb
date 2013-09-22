@@ -38,7 +38,11 @@
 <div>
   <button id="serialize-btn">Serialize highlights</button>
   <button id="deserialize-btn">Deserialize highlights</button>
-  <textarea rows="6" cols="90" style="width: 100%"><%= Mark.first.highlight.to_s %></textarea>
+  <% if Mark.count >0 %>
+    <textarea rows="6" cols="90" style="width: 100%"><%= Mark.first.highlight.to_s %></textarea>
+  <% else %>
+    <textarea rows="6" cols="90" style="width: 100%"></textarea>
+  <% end %>
 </div>
 
 <%= render 'highlight_form' %>
