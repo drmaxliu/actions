@@ -7,6 +7,7 @@ Actions::Application.routes.draw do
 
   get 'demo-page' => 'highlight_demo#demo-page'
   get 'demo-page-with-iframe' => 'highlight_demo#demo-page-with-iframe'
+  get 'test' => 'highlight_demo#test'
 
 
   # The priority is based upon order of creation:
